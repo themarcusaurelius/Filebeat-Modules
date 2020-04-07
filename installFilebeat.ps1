@@ -8,7 +8,7 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
 
     "`nYou are running Powershell with full privilege`n"
 
-    Set-Location -Path 'c:\filebeat-master\filebeat'
+    Set-Location -Path 'c:\filebeat-modules-master\filebeat'
     Set-ExecutionPolicy Unrestricted
     
     "Filebeatbeat Execution policy set - Success`n"
