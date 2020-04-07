@@ -15,7 +15,7 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
 
     
     #=========== Filebeat Credentials Form ===========#
-    "`nAdding Filebeat Credentials`n"
+    "Adding Filebeat Credentials`n"
 
     #GUI To Insert User Credentials
     #Pop-up Box that Adds Credentials 
@@ -130,6 +130,8 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
         ForEach-Object {$_ -Replace 'elasticsearch-api-endpoint', "$($objTextBox4.Text)"} |
             Set-Content filebeat.yml
 
+    "Credentials Added...`n"
+
     #============ Filebeat Modules Dropdown =============#
 
     Add-Type -AssemblyName System.Windows.Forms
@@ -189,7 +191,9 @@ if($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) 
     {
         $x = $listBox.SelectedItem
         
-        .\filebeat.exe modules enable $x
+        .\filebeat.exe modules enable $x 
+        
+        "`n"
     }
 
     #Runs the config test to make sure all data has been inputted correctly
